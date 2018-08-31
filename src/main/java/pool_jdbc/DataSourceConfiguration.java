@@ -1,9 +1,7 @@
-package pool;
+package pool_jdbc;
 
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
@@ -11,6 +9,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceConfiguration {
 
+	/*
 	@Profile("Pool")
 	@Bean
 	public BasicDataSource dataSourcePool() {
@@ -24,6 +23,8 @@ public class DataSourceConfiguration {
 	}
 
 	@Profile("JDBC")
+	*/
+
 	@Bean
 	public DataSource dataSourceJDBC() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();

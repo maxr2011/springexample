@@ -1,4 +1,4 @@
-package pool;
+package pool_jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
