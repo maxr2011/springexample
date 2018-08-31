@@ -2,23 +2,25 @@ package pool;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.sql.DataSource;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes= DataSourceConfiguration.class)
+@ActiveProfiles("JDBC")
 public class DataSourceTest {
 
 	@Autowired
-	private BasicDataSource bds;
+	private DataSource ds;
+
 
 	@Test
-	public void bdsShouldNotBeNull(){
-		assertNotNull(bds);
-	}
+	public void dsShouldNotBeNull() { assertNotNull(ds); }
 
 }
